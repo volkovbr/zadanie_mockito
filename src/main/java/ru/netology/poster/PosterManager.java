@@ -1,7 +1,8 @@
 package ru.netology.poster;
 
 public class PosterManager {
-    private String[] movies = new String[0];
+    Poster poster=new Poster();
+    private Poster[] movies = new Poster[0];
     private int limitMovies = 10;
 
     public PosterManager() {
@@ -12,8 +13,8 @@ public class PosterManager {
         this.limitMovies = limitMovies;
     }
 
-    public void add(String movie) {
-        String[] tmp = new String[movies.length + 1];
+    public void add(Poster movie) {
+        Poster[] tmp = new Poster[movies.length + 1];
         for (int i = 0; i < movies.length; i++) {
             tmp[i] = movies[i];
         }
@@ -21,18 +22,18 @@ public class PosterManager {
         movies = tmp;
     }
 
-    public String[] findAll() {
+    public Poster[] findAll() {
         return movies;
     }
 
-    public String[] findLast() {
+    public Poster[] findLast() {
         int resultLength;
         if (movies.length < limitMovies) {
             resultLength = movies.length;
         } else {
             resultLength = limitMovies;
         }
-        String[] result = new String[resultLength];
+        Poster[] result = new Poster[resultLength];
         for (int i = 0; i < result.length; i++) {
             result[i] = movies[movies.length - 1 - i];
         }
